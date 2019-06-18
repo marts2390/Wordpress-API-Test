@@ -1,0 +1,120 @@
+$base-padding: 5px;
+$small-font: 0.8rem;
+$medium-font: 1rem;
+$large-font: 1.375rem;
+$xl-font: 1.625rem;
+
+$bold: 700;
+$regular: 400;
+$thin: 300;
+
+$header-font: 'Dancing Script', 'Arial', sans-serif, cursive;
+$secondary-font: 'Merriweather', serif;
+
+$letter-spacing: 1px;
+
+$primary-color: #000000;
+$secondary-color: #f9f9f9;
+
+body {
+    font-family: $secondary-font;
+}
+
+button:focus {
+    outline: none;
+}
+
+a {
+    color: $secondary-color;
+    &:hover {
+        text-decoration: none;
+        color: $secondary-color;
+    }
+}
+
+p {
+    font-size: $small-font;
+}
+
+h2 {
+    font-family: $header-font;
+    padding: $base-padding * 2 0;
+    font-size: 26px;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.transition {
+    -webkit-transition: 500ms ease-out;
+    -moz-transition:  500ms ease-out;
+    -o-transition: 500ms ease-out;
+    transition: 500ms ease-out;
+}
+
+.background-image {
+    background-position: center;
+    background-size: cover;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba($primary-color, 0.3)
+}
+
+.instaimg {
+    @extend .transition;
+    padding: 0;
+    overflow: hidden;
+    height: 200px;
+    background: $primary-color;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.black-bg {
+    background-color: black;
+    color: white;
+}
+
+.title-padding {
+    padding: $base-padding * 10 0;
+}
+
+.fixed {
+    // @extend .transition;
+    // position: fixed;
+    top:0; 
+    left:0;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba($primary-color, 0.75);
+    height: 100px;
+    .main-logo {
+        width: 150PX;
+    }
+}
+
+.slick-next {
+    display: none !important;
+}

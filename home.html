@@ -1,0 +1,176 @@
+<html ng-app="testApp" ng-controller="mainController">
+
+<head>
+    <span ng-show='loaded === true'>
+
+
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/angular-sanitize/angular-sanitize.js"></script>
+  <script src="node_modules/angular-slick-carousel/dist/angular-slick.min.js"></script>
+
+
+  <script src="node_modules/slick-carousel/slick/slick.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <script src="node_modules/sidr/dist/jquery.sidr.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Merriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" charset="UTF-8" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" charset="UTF-8" href="node_modules/slick-carousel/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" charset="UTF-8" href="node_modules/slick-carousel/slick/slick-theme.css" />
+  <link rel="stylesheet" type="text/css" charset="UTF-8" href="node_modules/sidr/dist/stylesheets/jquery.sidr.dark.min.css" />
+  <link rel="stylesheet" type="text/css" charset="UTF-8" href="./css/magnific.css" />
+
+
+  <script src="scripts/app.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<!-- <span ng-show='loaded === false'>
+  <img loop=infinite src="./assets/images/480.gif">
+</span> -->
+<header>
+  <div class="header-inner">
+    <img class="main-logo" src="{{logo}}">
+    <div class="nav-links">
+        <a href="https://www.instagram.com/kirstypoppins_dogwalker/">
+          <i class="fab fa-instagram"></i>        
+      </a>
+      <a href="mailto:kirstypoppins@gmail.com?Subject=New%20message%20for%20Kirsty%20Poppins" target="_top">
+          <i class="far fa-envelope"></i>
+        </a>
+    </div>
+  </div>
+</header>
+
+<body>
+
+  <!-- <a id="simple-menu" href="#sidr" class="hamburger hamburger--spin" type="button">Toggle menu</a> -->
+
+  <button ng-click="navAnimation()" id="simple-menu" href="#sidr" class="hamburger hamburger--slider" type="button" aria-label="Menu" aria-controls="navigation">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </button>
+
+  <div id="sidr">
+    <!-- Your content -->
+    <ul>
+      <li ng-click="closeAnimation()" id="link1"><a href="#">About Me</a></li>
+      <li ng-click="closeAnimation()" id="link2"><a href="#">Services</a></li>
+      <li ng-click="closeAnimation()" id="link3"><a href="#">Prices</a></li>
+      <li ng-click="closeAnimation()" id="link4"><a href="#">Testimonials</a></li>
+      <li ng-click="closeAnimation()" id="link5"><a href="#">Gallery</a></li>
+    </ul>
+    <div class="sidr-links">
+        <a href="https://www.instagram.com/kirstypoppins_dogwalker/">
+            <i class="fab fa-instagram"></i>        
+        </a>
+        <a href="mailto:kirstypoppins@gmail.com?Subject=New%20message%20for%20Kirsty%20Poppins" target="_top">
+            <i class="far fa-envelope"></i>
+          </a>
+      </div>
+  </div>
+
+
+    <div class="top-bar">
+
+    </div>
+
+    <div class="hero-image">
+      <div class="intro-area">
+        <div class="intro-inner"></div>
+      </div>
+
+      <div class="heroSlider">
+        <span ng-repeat="images in heroSliderImages">
+          <div class="hero-slide-inner" style="background-image: url('{{images}}')">
+          </div>
+        </span>
+      </div>
+    </div>
+
+    <div class="bio-area">
+      <h1 class="section-title">About Me</h1>
+      <div ng-bind-html="introText"></div>
+    </div>
+
+
+    <div class="services-area">
+      <div class="service-area-inner">
+        <h1 class="section-title">Services</h1>
+        <div class="row">
+          <div class="col-md-3" ng-repeat="tile in serviceImgs">
+            <div class="box">
+              <div class="inner">
+                <div class="inner-image" style="background-image: url('{{tile.media_details.sizes.medium.source_url}}')"></div>
+                <div class="inner-text">
+                  <h2>{{tile.title.rendered}}</h2>
+                  <p ng-bind-html="tile.caption.rendered"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="pricing-area">
+      <h1 class="section-title">Pricing</h1>
+      <div class="row">
+        <div class="col-md-3 pricing-tile" ng-repeat='tiles in pricingText'>
+          <div class="pricing-tile-inner">
+            <h2 class="pricing-title">{{tiles.title.rendered}}</h2>
+            <div class="pricing-content" ng-bind-html="tiles.content.rendered"></div>
+          </div>
+        </div>
+      </div>
+      <p class="offer-text">*I also offer discounts for multiple/long term bookings, please get in touch for more
+        information.</p>
+    </div>
+
+
+    <div class="testimonial-area">
+      <div class="image-overlay"></div>
+      <div class="testimonialSlider">
+        <div ng-repeat="post in testimonials">
+          <div class="testimonial-slide">
+            <div class="testimonial-slide-inner">
+              <p ng-bind-html="post.excerpt.rendered"></p>
+              <h2 ng-bind-html="post.title.rendered"></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="instagram-feed container">
+      <h1 class="section-title">Instagram</h1>
+      <div class="row gallery" id="instafeed"></div>
+    </div>
+
+  <script src="./scripts/instafeed.min.js"></script>
+  <script src="./scripts/magnific.min.js"></script>
+</body>
+<footer>
+  <div class="social-links">
+      <a href="https://www.instagram.com/kirstypoppins_dogwalker/">
+        <i class="fab fa-instagram"></i>        
+    </a>
+    <a href="mailto:kirstypoppins@gmail.com?Subject=New%20message%20for%20Kirsty%20Poppins" target="_top">
+        <i class="far fa-envelope"></i>
+      </a>
+  </div>
+  <div class="copyright">
+    <p>Created by <a href="#">CM Designs</a></p>
+  </div>
+</footer>
+
+</span>
+
+</html>

@@ -1,0 +1,165 @@
+.hero-image {
+    height: 350px;
+    @extend .background-image;
+    background-position: top;
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    font-family: $header-font;
+    padding: $base-padding * 8;
+}
+
+.heroSlider .hero-slide-inner {
+    @extend .background-image;
+    height: 100%;
+}
+
+.intro-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    color: white;
+    background-color: rgba($primary-color, 0.5);
+    z-index: 1;
+}
+
+.intro-area .intro-inner {
+    @extend .center-content;
+    padding: 0 $base-padding * 10;
+    h2 {
+        font-family: $header-font;
+        padding-bottom: $base-padding * 3;
+    }
+    p {
+        font-weight: $thin;
+    }
+}
+
+.bio-area {
+    @extend .container;
+    width: 80%;
+    padding-bottom: $base-padding * 8;
+    text-align: center;
+    .bio-title {
+        font-weight: 600;
+        font-size: 16px;
+    }
+}
+
+
+.services-area {
+    @extend .black-bg;
+    margin: 0;
+    padding-bottom: $base-padding * 8;
+    .service-area-inner {
+        @extend .container;
+    }
+    .inner {
+        .inner-image {
+            @extend .background-image;
+            height: 200px;
+            width: 200px;
+            // border-radius: 100%;
+            margin: 0 auto;
+            padding: 0 $base-padding * 4;
+        }
+        .inner-text {
+            text-align: center;
+        }
+    }
+}
+
+.pricing-area {
+    @extend .container;
+    text-align: center;
+    padding-bottom: $base-padding * 8;
+    .offer-text {
+        font-style: italic;
+        padding-top: $base-padding * 2;
+    }
+        .pricing-tile-inner {
+            margin: 0 $base-padding;
+            .pricing-title {
+                background: $primary-color;
+                color: $secondary-color; 
+                margin-bottom: $base-padding * 2;
+            }
+            .pricing-content {
+                border: 1px solid rgba($primary-color, 0.1);
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    li {
+                        font-size: $small-font;
+                        padding: $base-padding * 3 $base-padding * 2;
+                        font-weight: $thin;
+                        border-bottom: 1px solid rgba($primary-color, 0.1);
+                    }
+                    p {
+                        margin: 0;
+                        padding: 15px;
+                        font-size: $small-font * 1.5;
+                        font-family: $header-font;
+                    }
+                }
+            }
+        }
+    }
+
+.testimonial-area{
+    @extend .background-image;
+    position: relative;
+    height: 400px;
+    background-image: url('https://testapisite.cloudaccess.host/wp-content/uploads/2018/12/poppins-banner.jpg');
+}
+
+.testimonial-area .image-overlay {
+    background: rgba($primary-color, 0.5);
+    padding-bottom: $base-padding * 8;
+}
+
+.testimonial-slide {
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+.testimonial-slide .testimonial-slide-inner {
+    @extend .center-content;
+    padding: 0 $base-padding * 10;
+}
+
+.testimonial-slide p  {
+    position: relative;   
+    font-style: italic; 
+    letter-spacing: $letter-spacing;
+}
+
+.testimonial-slide h2 {
+    position: relative;  
+    font-family: $header-font;
+}
+
+
+.instagram-feed {
+    margin: 0 auto;
+    padding-bottom: $base-padding * 8;
+}
+
+.contact-area {
+    text-align: center;
+    @extend .black-bg;
+    .contact-inner {
+       
+        @extend .container;
+    }
+    .contact-text {
+        font-weight: $bold;
+    }
+}

@@ -1,0 +1,32 @@
+footer {
+    background-color: $primary-color;
+}
+
+footer .social-links {
+    color: white;
+    text-align: center;
+    font-size: $medium-font * 2;
+    i {
+        @extend .transition;
+        padding: $base-padding * 6 $base-padding * 2;
+        &:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    }
+}
+
+footer .copyright {
+    color: white;
+    text-align: center;
+    font-weight: $thin;
+    font-family: $header-font;
+    padding-bottom: $base-padding;
+    a {
+        @extend .transition;
+        color: $secondary-color;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}
